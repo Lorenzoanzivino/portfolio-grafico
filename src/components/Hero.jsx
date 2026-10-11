@@ -76,7 +76,7 @@ export default function Hero() {
                 <img
                   src={resolveAsset('/assets/logoPersonale.jpg')}
                   alt="Lorenzo Anzivino Ritratto Grafico"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover"
                   onError={(e) => {
                     e.target.style.display = 'none';
                     if (e.target.nextElementSibling) {
@@ -110,8 +110,8 @@ export default function Hero() {
 
               {/* Didascalia inferiore della card: descrizione in nero */}
               <div className="pt-4 flex items-center justify-between text-xs text-black">
-                <span className="font-mono">PROGETTAZIONE EDITORIALE</span>
-                <span className="text-[#44553C] font-semibold">✦ MILANO / REMOTO</span>
+                <span className="font-mono">LORENZO ANZIVINO</span>
+                <span className="text-[#44553C] font-semibold">✦ PORTFOLIO</span>
               </div>
             </div>
           </div>
