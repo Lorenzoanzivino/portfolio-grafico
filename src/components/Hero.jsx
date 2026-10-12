@@ -1,4 +1,4 @@
-import { ArrowDown, CheckCircle2, Palette, Printer, Sparkles } from 'lucide-react';
+import { ArrowDown, CheckCircle2, Sparkles } from 'lucide-react';
 import { resolveAsset } from '../utils/assetHelper';
 
 export default function Hero() {
@@ -64,55 +64,19 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Colonna Destra: Ritratto fotografico professionale & Badge astratto */}
-          <div className="relative flex items-center justify-center lg:justify-end">
-            <div className="relative w-full max-w-md aspect-[4/5] rounded-3xl bg-white p-4 sm:p-5 shadow-2xl border border-[#713600]/15 flex flex-col justify-between overflow-hidden group">
-              {/* Sfondo geometrico astratto */}
-              <div className="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-[#44553C]/15 blur-2xl pointer-events-none" />
-              <div className="absolute -bottom-16 -left-16 w-48 h-48 rounded-full bg-[#B85D43]/15 blur-2xl pointer-events-none" />
+          {/* Colonna Destra: Artwork / Logo Scenico integrato (Nascosto su Mobile, visibile da tablet/desktop) */}
+          <div className="hidden md:flex items-center justify-center lg:justify-end">
+            <div className="relative max-w-sm lg:max-w-md w-full">
+              {/* Bagliori ambientali d'accento dietro l'opera */}
+              <div className="absolute -top-10 -right-10 w-44 h-44 rounded-full bg-[#44553C]/15 blur-3xl pointer-events-none" />
+              <div className="absolute -bottom-10 -left-10 w-44 h-44 rounded-full bg-[#713600]/15 blur-3xl pointer-events-none" />
 
-              {/* Contenitore Immagine / Ritratto fotografico */}
-              <div className="relative w-full flex-1 rounded-2xl overflow-hidden bg-[#713600]/5 border border-[#713600]/10 flex items-center justify-center">
-                <img
-                  src={resolveAsset('/assets/logoPersonale.jpg')}
-                  alt="Lorenzo Anzivino Ritratto Grafico"
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                    if (e.target.nextElementSibling) {
-                      e.target.nextElementSibling.style.display = 'flex';
-                    }
-                  }}
-                />
-                {/* Fallback astratto se l'immagine non è disponibile */}
-                <div className="hidden absolute inset-0 flex-col items-center justify-center p-6 text-center bg-[#F8F5EE]">
-                  <Palette className="w-16 h-16 text-[#44553C] mb-3" />
-                  <span className="font-serif text-2xl font-bold text-[#713600]">Lorenzo Anzivino</span>
-                  <span className="text-xs text-black mt-1 uppercase tracking-widest font-mono">Graphic &amp; Visual Design</span>
-                </div>
-
-                {/* Badge Sovraimpresso in basso */}
-                <div className="absolute bottom-3 left-3 right-3 p-3 rounded-xl bg-[#F8F5EE]/95 backdrop-blur-md border border-[#713600]/15 flex items-center justify-between shadow-lg">
-                  <div className="flex items-center gap-2.5">
-                    <div className="w-8 h-8 rounded-lg bg-[#44553C] text-[#F8F5EE] flex items-center justify-center font-bold text-xs">
-                      <Printer className="w-4 h-4 text-[#F8F5EE]" />
-                    </div>
-                    <div className="text-left">
-                      <p className="text-xs font-bold text-[#713600]">Art Direction &amp; Stampa</p>
-                      <p className="text-[10px] text-black font-mono">FOGRA39 • ISO 12647-2</p>
-                    </div>
-                  </div>
-                  <span className="px-2 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-[#44553C]/15 text-[#44553C] border border-[#44553C]/25">
-                    Attivo 2026
-                  </span>
-                </div>
-              </div>
-
-              {/* Didascalia inferiore della card: descrizione in nero */}
-              <div className="pt-4 flex items-center justify-between text-xs text-black">
-                <span className="font-mono">LORENZO ANZIVINO</span>
-                <span className="text-[#44553C] font-semibold">✦ PORTFOLIO</span>
-              </div>
+              {/* Artwork sospeso: bordi arrotondati, ombra 2xl, rotate-1, nessun hover scale */}
+              <img
+                src={resolveAsset('/assets/logoPersonale.jpg')}
+                alt="Lorenzo Anzivino Graphic Visual Design"
+                className="relative z-10 w-full h-auto max-h-[460px] object-cover rounded-3xl shadow-2xl shadow-black/20 rotate-1 border border-[#713600]/10"
+              />
             </div>
           </div>
         </div>

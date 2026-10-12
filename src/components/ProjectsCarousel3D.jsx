@@ -153,13 +153,13 @@ export default function ProjectsCarousel3D({ projects = [], onSelectProject }) {
                     backgroundColor: '#FFFFFF',
                     transition: 'transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.4s ease, filter 0.4s ease',
                   }}
-                  className={`absolute w-[290px] sm:w-[350px] md:w-[390px] rounded-3xl overflow-hidden border-2 bg-white ${
+                  className={`absolute w-[290px] sm:w-[350px] md:w-[390px] rounded-3xl overflow-hidden border-2 bg-white group ${
                     isCenter
                       ? 'shadow-2xl border-[#713600]/30 ring-2 ring-[#44553C]/20 opacity-100 cursor-pointer'
                       : 'shadow-lg border-[#713600]/15 cursor-pointer hover:opacity-80'
                   }`}
                 >
-                  {/* Immagine 16:9 del Mockup */}
+                  {/* Immagine 16:9 del Mockup con Indicatori di Click */}
                   <div className="relative w-full aspect-video overflow-hidden bg-[#713600]/5">
                     <img
                       src={resolveAsset(project.coverImage)}
@@ -175,12 +175,31 @@ export default function ProjectsCarousel3D({ projects = [], onSelectProject }) {
                       </span>
                     </div>
 
-                    {/* Badge interattivo sulla card centrale */}
+                    {/* Overlay in Hover sulla card centrale (Opzione A) */}
                     {isCenter && (
-                      <div className="absolute bottom-3 right-3 z-10">
-                        <span className="px-3 py-1.5 rounded-full bg-[#FFFFFF]/95 border border-[#713600]/20 text-[#713600] text-[11px] font-bold tracking-wider uppercase flex items-center gap-1.5 shadow-md">
+                      <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 bg-black/40 backdrop-blur-[2px]">
+                        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F8F5EE] text-[#713600] text-xs font-sans font-bold tracking-wider uppercase shadow-xl transform translate-y-1.5 group-hover:translate-y-0 transition-transform duration-300 border border-[#713600]/25">
+                          <Eye className="w-4 h-4 text-[#44553C]" />
+                          <span>Visualizza Progetto</span>
+                        </span>
+                      </div>
+                    )}
+
+                    {/* Badge Fisso in basso a destra sulla card centrale (Opzione B, visibile sempre) */}
+                    {isCenter && (
+                      <div className="absolute bottom-3 right-3 z-10 transition-opacity duration-200 group-hover:opacity-0">
+                        <span className="px-3 py-1.5 rounded-full bg-[#FFFFFF]/95 border border-[#713600]/25 text-[#713600] text-[11px] font-bold tracking-wider uppercase flex items-center gap-1.5 shadow-md">
                           <Eye className="w-3.5 h-3.5 text-[#44553C]" />
-                          Dettagli
+                          <span>Clicca per aprire</span>
+                        </span>
+                      </div>
+                    )}
+
+                    {/* Overlay in Hover per le card laterali */}
+                    {!isCenter && (
+                      <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-black/25 backdrop-blur-[1px]">
+                        <span className="px-3 py-1 rounded-full bg-white/95 text-[#713600] text-[11px] font-bold tracking-wider uppercase shadow-md border border-[#713600]/20">
+                          Clicca per centrare
                         </span>
                       </div>
                     )}
@@ -201,12 +220,13 @@ export default function ProjectsCarousel3D({ projects = [], onSelectProject }) {
                       {project.shortDescription || project.description}
                     </p>
 
-                    {/* Barra inferiore card */}
+                    {/* Barra inferiore card con Call-to-Action esplicita */}
                     <div className="mt-4 pt-3 border-t border-[#713600]/15 flex items-center justify-between text-[11px] font-mono">
                       <span className="text-black font-medium">{project.specs?.year || '2026'}</span>
                       {isCenter ? (
-                        <span className="text-[#44553C] font-bold">
-                          Click per aprire modale →
+                        <span className="text-[#44553C] font-bold flex items-center gap-1.5 group-hover:text-[#33412D]">
+                          <span>Apri scheda completa</span>
+                          <span className="text-xs transition-transform duration-200 group-hover:translate-x-0.5">→</span>
                         </span>
                       ) : (
                         <span className="text-[#713600]/60">

@@ -224,5 +224,44 @@ export const projects = [
       materials: 'Cartoncino alimentare antimacchia',
       software: 'Adobe InDesign, Illustrator'
     }
+  },
+  {
+    id: 'artwork-1',
+    title: 'Compositing & Digital Art',
+    category: 'Photo Manipulation / Artwork',
+    shortDescription: 'Manipolazione fotografica avanzata e compositing digitale con fusione luci, ombre e prospettiva.',
+    description: 'Manipolazione fotografica avanzata, scontorno, gestione luci/ombre e fusione prospettica per la creazione di opere digitali originali. Il lavoro integra elementi fotografici multipli attraverso maschere di livello complesse, correzione cromatica fine, dodge & burn e grading cromatico atmosferico su Adobe Photoshop.',
+    coverImage: '/ImmaginiPerSitiWeb/artwork/Poster_on_Concrete_Background_Mockup_1 copia.jpg',
+    images: [
+      '/ImmaginiPerSitiWeb/artwork/Poster_on_Concrete_Background_Mockup_1 copia.jpg',
+      '/ImmaginiPerSitiWeb/artwork/Poster_on_Concrete_Background_Mockup_2.jpg',
+      '/ImmaginiPerSitiWeb/artwork/Poster_on_Concrete_Background_Mockup_3.jpg',
+      '/ImmaginiPerSitiWeb/artwork/Poster_on_Concrete_Background_Mockup_4.jpg',
+    ],
+    specs: {
+      colorProfile: 'RGB / Adobe RGB (1998) & CMYK FOGRA39 per stampa fine art',
+      dimensions: 'Poster 50 x 70 cm (Alta Risoluzione 300 DPI)',
+      materials: 'Compositing digitale e stampa su carta Fine Art',
+      software: 'Adobe Photoshop'
+    }
+  },
+  {
+    id: 'calendario-1',
+    title: 'Calendario da Tavolo',
+    category: 'Print Design / Merchandising',
+    shortDescription: 'Progettazione grafica e impaginazione editoriale per calendario da tavolo con esecutivi di stampa.',
+    description: 'Progettazione grafica e impaginazione per calendario da tavolo, con preparazione del file per la stampa (impostazione CMYK, margini e abbondanze). Strutturazione della gabbia modulare dei mesi, selezione tipografica per leggibilità immediata e impostazione tecnica completa per rilegatura con spirale metallica Wire-O.',
+    coverImage: '/ImmaginiPerSitiWeb/calendario/Free_Desk_Calendar_Mockup_1.jpg',
+    images: [
+      '/ImmaginiPerSitiWeb/calendario/Free_Desk_Calendar_Mockup_1.jpg',
+      '/ImmaginiPerSitiWeb/calendario/Free_Desk_Calendar_Mockup_2.jpg',
+      '/ImmaginiPerSitiWeb/calendario/Free_Desk_Calendar_Mockup_3.jpg',
+    ],
+    specs: {
+      colorProfile: 'CMYK FOGRA39 (ISO 12647-2)',
+      dimensions: 'Formato desk orizzontale 21 x 15 cm con spirale metallica',
+      materials: 'Cartoncino patinato opaco 250g/m² con supporto rigido',
+      software: 'Adobe InDesign, Illustrator, Photoshop'
+    }
   }
 ];
